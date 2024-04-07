@@ -1,0 +1,7 @@
+<p-card header="{{message().title}}" subheader="{{message().isRead ? 'Read' : 'Unread'}}">
+  <p>{{message().message}}</p>
+  <ng-template pTemplate="footer">
+    <p-button *ngIf="!message().isRead" icon="pi pi-check" label="Mark as read" (click)="onMarkAsRead(message().id)"></p-button>
+    <p-button icon="pi pi-times" styleClass="p-button-secondary" class="button-margin-left" label="Delete" (click)="onDelete(message().id)"></p-button>
+  </ng-template>
+</p-card>

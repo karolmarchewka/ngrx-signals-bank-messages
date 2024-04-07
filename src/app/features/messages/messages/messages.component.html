@@ -1,0 +1,26 @@
+<div class="messages-container">
+
+  <div class="search-sorting">
+    <span class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText [ngModel]="store.filterQuery()" (ngModelChange)="onFilterQueryChanged($event)" />
+    </span>
+    <p-dropdown [options]="sortingOptions" [ngModel]="store.sorting()" (onChange)="onSortingChange($event)" optionLabel="value" ></p-dropdown>
+  </div>
+
+  @defer (when !store.showSpinner()) {
+    @for (message of store.messages(); track message.id) {
+      <bm-message [message]="message"></bm-message>
+    } @empty {
+      <div class="empty">
+        <p>No messages found</p>
+      </div>
+    }
+  } @placeholder {
+    <div class="empty">
+      <p-progressSpinner ariaLabel="loading"></p-progressSpinner>
+    </div>
+  }
+</div>
+
+

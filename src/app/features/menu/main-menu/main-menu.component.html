@@ -1,0 +1,14 @@
+<p-menubar [model]="menuItems">
+  <ng-template pTemplate="start">
+    <img src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40" class="mr-2 item-margin-left" />
+  </ng-template>
+  <ng-template pTemplate="item" let-item>
+    <span class="item-margin-left">{{item.label}}</span>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div class="unread-messages">
+      <i class="pi pi-fw pi-envelope"></i>
+      <span>Unread : {{ store.unreadMessages() }}</span>
+    </div>
+  </ng-template>
+</p-menubar>

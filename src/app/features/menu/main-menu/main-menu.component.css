@@ -1,0 +1,11 @@
+.unread-messages {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.item-margin-left {
+  margin-left: 1rem;
+}
+
